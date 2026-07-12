@@ -2,17 +2,37 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPSEE - Norme</title>
-    <style>body{font-family:sans-serif;background:#f4f7f6;padding:20px;}.btn{display:block;text-decoration:none;background:#1e293b;color:white;padding:10px;border-radius:8px;margin-bottom:20px;text-align:center;}.card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.1);}</style>
+    <title>TPSEE - Simboli & Norme</title>
+    <style>
+        body{font-family:'Segoe UI',sans-serif;background:#f4f7f6;padding:20px;}
+        .btn{display:inline-block;text-decoration:none;background:#1e293b;color:white;padding:10px 15px;border-radius:8px;margin-bottom:20px;}
+        .card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.1);margin-bottom:20px;}
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #db2777; color: white; }
+    </style>
 </head>
 <body>
     <a href="index.html" class="btn">← Home</a>
+    
     <div class="card">
-        <h2 style="color:#db2777">Normative e Sicurezza</h2>
-        <h3>Norme CEI</h3>
-        <p>In Italia, le norme del Comitato Elettrotecnico Italiano stabiliscono come realizzare impianti sicuri a regola d'arte.</p>
-        <h3>Gradi di Protezione IP</h3>
-        <p>Indicano la resistenza di un involucro a polvere (prima cifra) e acqua (seconda cifra). Es: IP65.</p>
+        <h2 style="color:#db2777">Prontuario Simboli Grafici CEI/IEC</h2>
+        <p>Riferimento veloce per non sbagliare le icone nei compiti di disegno tecnico:</p>
+        <table>
+            <thead><tr><th>Componente</th><th>Lettera Identificativa</th><th>Descrizione Grafica Schema</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Contattore (Bobina)</strong></td><td>KM</td><td>Rettangolo semplice con linee ai capi A1-A2</td></tr>
+                <tr><td><strong>Contatti Potenza</strong></td><td>KM (1-2, 3-4, 5-6)</td><td>Linee interrotte da semicerchi aperti (normalmente aperti)</td></tr>
+                <tr><td><strong>Relè Termico</strong></td><td>FR</td><td>Simbolo a "quadrato aperto" con linea spezzata termica</td></tr>
+                <tr><td><strong>Trasformatore</strong></td><td>TM</td><td>Due cerchi intersecati o due bobine affiancate</td></tr>
+                <tr><td><strong>Motore Asincrono 3~</strong></td><td>M</td><td>Cerchio con all'interno la scritta M e 3~</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2 style="color:#db2777">Gradi di Protezione IP</h2>
+        <p>Esempio: <strong>IP65</strong> $\rightarrow$ 6: Protezione totale dalle polveri | 5: Protezione dai getti d'acqua d'ugello.</p>
     </div>
 </body>
 </html>

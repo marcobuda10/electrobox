@@ -2,17 +2,38 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TPSEE - Misure</title>
-    <style>body{font-family:sans-serif;background:#f4f7f6;padding:20px;}.btn{display:block;text-decoration:none;background:#1e293b;color:white;padding:10px;border-radius:8px;margin-bottom:20px;text-align:center;}.card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.1);}</style>
+    <title>TPSEE - Misure & Cavi</title>
+    <style>
+        body{font-family:'Segoe UI',sans-serif;background:#f4f7f6;padding:20px;}
+        .btn{display:inline-block;text-decoration:none;background:#1e293b;color:white;padding:10px 15px;border-radius:8px;margin-bottom:20px;}
+        .card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.1);margin-bottom:20px;}
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #db2777; color: white; }
+    </style>
 </head>
 <body>
     <a href="index.html" class="btn">← Home</a>
+    
     <div class="card">
-        <h2 style="color:#db2777">Misure Elettriche</h2>
-        <h3>Multimetro</h3>
-        <p>Strumento versatile per misurare V, I, R e continuità.</p>
+        <h2 style="color:#db2777">Portata Cavi in Rame (Indicativa in Aria)</h2>
+        <p>Guida rapida per scegliere la sezione minima del conduttore evitando il surriscaldamento dell'impianto:</p>
+        <table>
+            <thead><tr><th>Sezione Cavo ($\text{mm}^2$)</th><th>Corrente Max Nominale ($A$)</th><th>Applicazione Tipica Scolastica</th></tr></thead>
+            <tbody>
+                <tr><td><strong>0.75 - 1.0</strong></td><td>6 A - 10 A</td><td>Segnali logici, elettronica di controllo, piccoli carichi</td></tr>
+                <tr><td><strong>1.5</strong></td><td>13 A - 16 A</td><td>Impianti Luce civili, bobine dei contattori</td></tr>
+                <tr><td><strong>2.5</strong></td><td>20 A - 25 A</td><td>Prese di potenza civili, piccoli motori monofase</td></tr>
+                <tr><td><strong>4.0</strong></td><td>32 A</td><td>Linee dorsali principali dei banchi di laboratorio</td></tr>
+                <tr><td><strong>6.0</strong></td><td>40 A</td><td>Alimentazione generale di quadri didattici trifase</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="card">
+        <h2 style="color:#db2777">Strumenti di Misura</h2>
         <h3>Oscilloscopio</h3>
-        <p>Fondamentale per visualizzare la forma d'onda del segnale nel tempo, misurare frequenza, periodo e ampiezza picco-picco.</p>
+        <p>Misura il segnale nel tempo. Fondamentale per studiare i transitori.</p>
     </div>
 </body>
 </html>

@@ -9,6 +9,10 @@
         .btn-back { display: inline-block; text-decoration: none; background-color: #1e293b; color: white; padding: 10px 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
         .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
         h2 { color: #0284c7; margin-top: 0; }
+        label { display: block; margin: 10px 0 5px; font-weight: bold; }
+        select, input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; box-sizing: border-box; }
+        button { background-color: #0284c7; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; margin-top: 15px; font-weight: bold; cursor: pointer; }
+        .result { background: #e0f2fe; padding: 15px; border-left: 5px solid #0284c7; margin-top: 15px; border-radius: 4px; font-family: monospace; font-size: 14px; white-space: pre-line; }
         table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; }
         th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         th { background-color: #0284c7; color: white; }
@@ -17,25 +21,63 @@
 </head>
 <body>
     <a href="index.html" class="btn-back">← Torna alla Home</a>
+
+    <div class="section-card">
+        <h2>Calcolatore Subnet Veloce (IPv4 Class C)</h2>
+        <p>Calcola maschera, IP di Broadcast ed Host utili per reti locali standard (sotto-reti di /24).</p>
+        <label>Indirizzo IP di partenza (Rete):</label>
+        <input type="text" id="ip_base" value="192.168.1.0">
+        <label>Notazione CIDR:</label>
+        <select id="cidr">
+            <option value="24">/24 (Maschera: 255.255.255.0)</option>
+            <option value="25">/25 (Maschera: 255.255.255.128)</option>
+            <option value="26">/26 (Maschera: 255.255.255.192)</option>
+            <option value="27">/27 (Maschera: 255.255.255.224)</option>
+            <option value="28">/28 (Maschera: 255.255.255.240)</option>
+            <option value="30">/30 (Maschera: 255.255.255.252)</option>
+        </select>
+        <button onclick="calcolaSubnet()">Calcola Subnet</button>
+        <div id="risultato_subnet" class="result">Dati Subnet: Clicca su Calcola</div>
+    </div>
+
     <div class="section-card">
         <h2>Prontuario Reti & Modello ISO/OSI</h2>
-        <p>La struttura a livelli standard che descrive le comunicazioni di rete informatiche:</p>
         <table>
             <thead>
-                <tr>
-                    <th>Livello</th>
-                    <th>Nome</th>
-                    <th>Protocolli e Dispositivi Comuni</th>
-                </tr>
+                <tr><th>Livello</th><th>Nome</th><th>Protocolli Comuni</th></tr>
             </thead>
             <tbody>
                 <tr><td><strong>7</strong></td><td>Applicazione</td><td>HTTP, HTTPS, FTP, DNS, SMTP</td></tr>
-                <tr><td><strong>4</strong></td><td>Trasporto</td><td>TCP (Connessione sicura), UDP (Veloce)</td></tr>
-                <tr><td><strong>3</strong></td><td>Rete</td><td>IP (Indirizzamento logico), ICMP / <strong>Router</strong></td></tr>
-                <tr><td><strong>2</strong></td><td>Collegamento</td><td>Ethernet, Wi-Fi, Indirizzi MAC / <strong>Switch</strong></td></tr>
-                <tr><td><strong>1</strong></td><td>Fisico</td><td>Cavi in rame, Fibra ottica, Segnali Radio</td></tr>
+                <tr><td><strong>4</strong></td><td>Trasporto</td><td>TCP, UDP</td></tr>
+                <tr><td><strong>3</strong></td><td>Rete</td><td>IP, ICMP / <strong>Router</strong></td></tr>
+                <tr><td><strong>2</strong></td><td>Collegamento</td><td>Ethernet, Wi-Fi / <strong>Switch</strong></td></tr>
+                <tr><td><strong>1</strong></td><td>Fisico</td><td>Cavi, Segnali Radio</td></tr>
             </tbody>
         </table>
     </div>
+
+    <script>
+        function calcolaSubnet() {
+            let ip = document.getElementById('ip_base').value;
+            let cidr = parseInt(document.getElementById('cidr').value);
+            let parts = ip.split('.');
+            if(parts.length !== 4) { alert("Inserisci un IP valido nel formato x.x.x.x"); return; }
+            
+            let baseSub = parseInt(parts[3]);
+            let hostTotali = Math.pow(2, 32 - cidr);
+            let hostUtili = hostTotali - 2;
+            let maskLastOctet = 256 - hostTotali;
+            let broadcast = baseSub + hostTotali - 1;
+            
+            let output = "Subnet Mask: 255.255.255." + maskLastOctet + "\n" +
+                         "Host Totali: " + hostTotali + " | Host Utili: " + hostUtili + "\n" +
+                         "IP di Rete: " + parts[0]+"."+parts[1]+"."+parts[2]+"."+baseSub + "\n" +
+                         "Primo IP Utile: " + parts[0]+"."+parts[1]+"."+parts[2]+"."+(baseSub+1) + "\n" +
+                         "Ultimo IP Utile: " + parts[0]+"."+parts[1]+"."+parts[2]+"."+(broadcast-1) + "\n" +
+                         "IP di Broadcast: " + parts[0]+"."+parts[1]+"."+parts[2]+"."+broadcast;
+            
+            document.getElementById('risultato_subnet').innerText = output;
+        }
+    </script>
 </body>
 </html>
