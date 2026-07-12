@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemi - Regole dell'Automazione</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .btn-back { display: inline-block; text-decoration: none; background-color: #1e293b; color: white; padding: 10px 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
+        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        h2 { color: #0f172a; margin-top: 0; }
+        .tip-box { background-color: #f1f5f9; border-left: 5px solid #0f172a; padding: 15px; border-radius: 4px; margin-top: 15px; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="btn-back">← Torna alla Home</a>
+    <div class="section-card">
+        <h2>Le Regole d'Oro di Sistemi</h2>
+        
+        <div class="tip-box">
+            <strong>1. Gestione IP Statici:</strong> Server, stampanti di rete e PLC devono sempre avere IP statici configurati al di fuori del range del server DHCP per evitare conflitti catastrofici.
+        </div>
+        
+        <div class="tip-box">
+            <strong>2. Sicurezza IoT:</strong> Cambia sempre le password di default (admin/admin) e isola i dispositivi IoT in una sottorete (VLAN) separata per evitare accessi non autorizzati.
+        </div>
+
+        <div class="tip-box">
+            <strong>3. Logica Fail-Safe:</strong> In automazione, la mancanza di corrente o il guasto di un sensore devono forzare il sistema a fermarsi nello stato più sicuro possibile per l'operatore (es. bloccare i motori).
+        </div>
+    </div>
+</body>
+</html>

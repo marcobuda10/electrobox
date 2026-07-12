@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemi - Protocolli e Reti</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .btn-back { display: inline-block; text-decoration: none; background-color: #1e293b; color: white; padding: 10px 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
+        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        h2 { color: #0284c7; margin-top: 0; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #0284c7; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="btn-back">← Torna alla Home</a>
+    <div class="section-card">
+        <h2>Prontuario Reti & Modello ISO/OSI</h2>
+        <p>La struttura a livelli standard che descrive le comunicazioni di rete informatiche:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Livello</th>
+                    <th>Nome</th>
+                    <th>Protocolli e Dispositivi Comuni</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>7</strong></td><td>Applicazione</td><td>HTTP, HTTPS, FTP, DNS, SMTP</td></tr>
+                <tr><td><strong>4</strong></td><td>Trasporto</td><td>TCP (Connessione sicura), UDP (Veloce)</td></tr>
+                <tr><td><strong>3</strong></td><td>Rete</td><td>IP (Indirizzamento logico), ICMP / <strong>Router</strong></td></tr>
+                <tr><td><strong>2</strong></td><td>Collegamento</td><td>Ethernet, Wi-Fi, Indirizzi MAC / <strong>Switch</strong></td></tr>
+                <tr><td><strong>1</strong></td><td>Fisico</td><td>Cavi in rame, Fibra ottica, Segnali Radio</td></tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

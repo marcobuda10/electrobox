@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemi - Terminale</title>
+    <style>
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .btn-back { display: inline-block; text-decoration: none; background-color: #1e293b; color: white; padding: 10px 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
+        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        h2 { color: #3b82f6; margin-top: 0; }
+        pre { background-color: #1e293b; color: #f8fafc; padding: 15px; border-radius: 6px; overflow-x: auto; font-family: monospace; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="btn-back">← Torna alla Home</a>
+    <div class="section-card">
+        <h2>Comandi da Terminale per Diagnostica</h2>
+        <p>I comandi fondamentali da digitare sulla riga di comando per verificare i guasti di rete:</p>
+        <pre>
+// Verifica se un dispositivo risponde ed è online
+ping 192.168.1.1
+ping google.com
+
+// Mostra la configurazione IP del tuo PC
+ipconfig         (Windows)
+ip a             (Linux)
+
+// Mostra tutti i nodi/router attraversati per raggiungere un sito
+tracert google.com</pre>
+    </div>
+</body>
+</html>

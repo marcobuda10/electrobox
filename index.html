@@ -2,11 +2,10 @@
 <html lang="it">
 <head>
     <meta charset="UTF-8">
-	<link rel="manifest" href="manifest.json">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hub Elettronica - Home</title>
+    <link rel="manifest" href="manifest.json">
+    <title>ElectroBox - Home</title>
     <style>
-        /* Stili di base per la pagina */
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             background-color: #f4f7f6;
@@ -15,7 +14,6 @@
             color: #333;
         }
 
-        /* Intestazione dell'applicazione */
         header {
             background-color: #1e293b;
             color: white;
@@ -24,62 +22,61 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
 
-        header h1 {
-            margin: 0;
-            font-size: 24px;
-        }
+        header h1 { margin: 0; font-size: 24px; }
+        header p { margin: 5px 0 0 0; font-size: 14px; color: #94a3b8; }
 
-        header p {
-            margin: 5px 0 0 0;
-            font-size: 14px;
-            color: #94a3b8;
-        }
-
-        /* Contenitore principale dei bottoni */
         .container {
             padding: 20px;
             max-width: 500px;
             margin: 0 auto;
         }
 
-        /* Stile dei pulsanti del menu (Card) */
+        /* Titoli delle Categorie */
+        .category-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin: 25px 0 15px 0;
+            padding-bottom: 5px;
+            color: #1e293b;
+            border-bottom: 2px solid #cbd5e1;
+        }
+        .container > .category-title:first-child {
+            margin-top: 5px; /* Meno spazio per il primo titolo */
+        }
+
+        /* Stile delle Card */
         .menu-card {
             background-color: white;
             display: block;
             text-decoration: none;
             color: inherit;
-            padding: 20px;
-            margin-bottom: 15px;
+            padding: 18px;
+            margin-bottom: 12px;
             border-radius: 12px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            border-left: 6px solid #3b82f6; /* Barra colorata laterale */
-            transition: transform 0.2s, box-shadow 0.2s;
+            border-left: 6px solid #3b82f6;
+            transition: transform 0.2s;
         }
 
-        /* Effetto quando si clicca (o si passa sopra con il mouse su PC) */
         .menu-card:active {
             transform: scale(0.98);
             background-color: #f8fafc;
         }
 
-        .menu-card h2 {
-            margin: 0 0 8px 0;
-            font-size: 18px;
-            color: #1e293b;
-        }
+        .menu-card h2 { margin: 0 0 5px 0; font-size: 16px; color: #1e293b; }
+        .menu-card p { margin: 0; font-size: 13px; color: #64748b; line-height: 1.4; }
 
-        .menu-card p {
-            margin: 0;
-            font-size: 14px;
-            color: #64748b;
-            line-height: 1.4;
-        }
+        /* Colori bordi Elettronica */
+        .card-calc { border-left-color: #10b981; }
+        .card-prog { border-left-color: #f59e0b; }
+        .card-pcb  { border-left-color: #8b5cf6; }
+        .card-info { border-left-color: #ef4444; }
 
-        /* Coloriamo i bordi in modo diverso per ogni sezione */
-        .card-calc { border-left-color: #10b981; } /* Verde */
-        .card-prog { border-left-color: #f59e0b; } /* Arancione */
-        .card-pcb  { border-left-color: #8b5cf6; } /* Viola */
-        .card-info { border-left-color: #ef4444; } /* Rosso */
+        /* Colori bordi Sistemi (Tonalità di azzurro/blu/ciano) */
+        .card-sis-sim { border-left-color: #06b6d4; }
+        .card-sis-net { border-left-color: #0284c7; }
+        .card-sis-cmd { border-left-color: #3b82f6; }
+        .card-sis-rule { border-left-color: #0f172a; }
 
     </style>
 </head>
@@ -87,11 +84,13 @@
 
     <header>
         <h1>ElectroBox</h1>
-        <p>La tua cassetta degli attrezzi per l'elettronica</p>
+        <p>La tua cassetta degli attrezzi per Elettronica e Sistemi</p>
     </header>
 
     <div class="container">
         
+        <div class="category-title">Elettronica</div>
+
         <a href="calcolatori.html" class="menu-card card-calc">
             <h2>1. Simulatori & Calcolatori</h2>
             <p>Codice colori resistenze, Legge di Ohm e scorciatoie per i simulatori (CircuitJS, LTspice).</p>
@@ -110,6 +109,29 @@
         <a href="studio.html" class="menu-card card-info">
             <h2>4. Formule & Organizzazione</h2>
             <p>Formulario di matematica ed elettronica (Kirchhoff, alternata) e integrazione Notion.</p>
+        </a>
+
+
+        <div class="category-title">Sistemi e Automazione</div>
+
+        <a href="sistemi-simulatori.html" class="menu-card card-sis-sim">
+            <h2>1. Piattaforme & Simulatori</h2>
+            <p>Guida a Cisco Packet Tracer, automazione IoT con Node-RED e ambienti PLC.</p>
+        </a>
+
+        <a href="sistemi-reti.html" class="menu-card card-sis-net">
+            <h2>2. Protocolli & Reti</h2>
+            <p>Il modello ISO/OSI spiegato livello per livello, indirizzamenti IP e subnetting.</p>
+        </a>
+
+        <a href="sistemi-comandi.html" class="menu-card card-sis-cmd">
+            <h2>3. Terminale & Diagnostica</h2>
+            <p>I comandi fondamentali (Ping, Ipconfig, Tracert) per fare troubleshooting di rete.</p>
+        </a>
+
+        <a href="sistemi-regole.html" class="menu-card card-sis-rule">
+            <h2>4. Regole dell'Automazione</h2>
+            <p>Linee guida per la sicurezza IoT, gestione dei conflitti IP e logiche Fail-Safe.</p>
         </a>
 
     </div>
