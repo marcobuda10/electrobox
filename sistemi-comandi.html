@@ -1,57 +1,47 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistemi - Diagnostica e Porte</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemi - Diagnostica</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
-        .btn-back { display: inline-block; text-decoration: none; background-color: #1e293b; color: white; padding: 10px 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
-        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .btn-back { display: block; text-align: center; text-decoration: none; background-color: #1e293b; color: white; padding: 12px; border-radius: 8px; font-size: 15px; font-weight: bold; margin-bottom: 20px; width: 100%; box-sizing: border-box; }
+        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; box-sizing: border-box; }
         h2 { color: #3b82f6; margin-top: 0; }
-        h3 { color: #1e293b; margin-top: 15px; margin-bottom: 5px; }
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
-        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        .table-container { width: 100%; overflow-x: auto; margin-top: 15px; border-radius: 6px; border: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; min-width: 400px; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         th { background-color: #3b82f6; color: white; }
-        pre { background-color: #1e293b; color: #f8fafc; padding: 15px; border-radius: 6px; overflow-x: auto; font-family: monospace; font-size: 14px; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="btn-back">← Torna alla Home</a>
+    <a href="index.html#sistemi" class="btn-back">← Torna alla Home</a>
 
     <div class="section-card">
-        <h2>Comandi da Terminale per Diagnostica</h2>
-        <pre>
-// Verifica connettività
-ping google.com
-// Mostra configurazione IP
-ipconfig
-// Traccia percorso pacchetti
-tracert google.com</pre>
+        <h2>Porte Logiche di Rete & IoT</h2>
+        <div class="table-container">
+            <table>
+                <thead><tr><th>Porta</th><th>Protocollo</th><th>Servizio</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>22</strong></td><td>SSH</td><td>Terminale Remoto Sicuro</td></tr>
+                    <tr><td><strong>80 / 443</strong></td><td>HTTP / HTTPS</td><td>Server Web standard</td></tr>
+                    <tr><td><strong>1883</strong></td><td>MQTT</td><td>Broker Messaggi IoT</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <div class="section-card">
-        <h2>Porte Logiche Standard Network & IoT</h2>
-        <table>
-            <thead><tr><th>Porta</th><th>Protocollo</th><th>Uso tipico</th></tr></thead>
-            <tbody>
-                <tr><td><strong>22</strong></td><td>SSH</td><td>Accesso remoto sicuro (es. Raspberry Pi)</td></tr>
-                <tr><td><strong>80</strong></td><td>HTTP</td><td>Navigazione Web non criptata</td></tr>
-                <tr><td><strong>443</strong></td><td>HTTPS</td><td>Navigazione Web Sicura SSL</td></tr>
-                <tr><td><strong>1883</strong></td><td>MQTT</td><td>Protocollo IoT leggero (Node-RED/Home Assistant)</td></tr>
-            </tbody>
-        </table>
-
-        <h3>Codici Stato HTTP Comuni</h3>
-        <table>
-            <thead><tr><th>Codice</th><th>Stato</th><th>Significato</th></tr></thead>
-            <tbody>
-                <tr><td><strong style="color:green">200</strong></td><td>OK</td><td>Richiesta andata a buon fine.</td></tr>
-                <tr><td><strong style="color:orange">400</strong></td><td>Bad Request</td><td>Errore di sintassi lato client.</td></tr>
-                <tr><td><strong style="color:red">404</strong></td><td>Not Found</td><td>Risorsa o pagina non trovata sul server.</td></tr>
-                <tr><td><strong style="color:purple">500</strong></td><td>Internal Error</td><td>Problema del server o crash dello script.</td></tr>
-            </tbody>
-        </table>
+        <h2>Codici di Stato HTTP Riassunti</h2>
+        <div class="table-container">
+            <table>
+                <thead><tr><th>Codice</th><th>Stato</th><th>Descrizione</th></tr></thead>
+                <tbody>
+                    <tr><td><strong style="color:green">200</strong></td><td>OK</td><td>Richiesta completata con successo.</td></tr>
+                    <tr><td><strong style="color:red">404</strong></td><td>Not Found</td><td>Risorsa web non trovata sul server.</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>

@@ -3,32 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hub Elettronica - Formule & Studio</title>
+    <title>Elettronica - Studio & Datasheet</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
-        .btn-back { display: inline-block; text-decoration: none; background-color: #1e293b; color: white; padding: 10px 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
-        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .btn-back { display: block; text-align: center; text-decoration: none; background-color: #1e293b; color: white; padding: 12px; border-radius: 8px; font-size: 15px; font-weight: bold; margin-bottom: 20px; width: 100%; box-sizing: border-box; }
+        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; box-sizing: border-box; }
         h2 { color: #ef4444; margin-top: 0; }
-        h3 { color: #1e293b; margin-top: 15px; margin-bottom: 5px; }
-        .formula-box { background-color: #fef2f2; border-left: 5px solid #ef4444; padding: 15px; border-radius: 4px; margin-top: 10px; font-family: Georgia, serif; font-size: 16px; }
-        .ds-link { display: inline-block; background-color: #f1f5f9; color: #1e293b; padding: 8px 12px; margin: 5px 2px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 13px; border: 1px solid #cbd5e1;}
+        .ds-link { display: inline-block; background-color: #f1f5f9; color: #1e293b; padding: 10px; margin: 5px 2px; border-radius: 6px; text-decoration: none; font-weight: bold; font-size: 13px; border: 1px solid #cbd5e1; }
         .ds-link:active { background-color: #cbd5e1; }
     </style>
 </head>
 <body>
-
-    <a href="index.html" class="btn-back">← Torna alla Home</a>
+    <a href="index.html#elettronica" class="btn-back">← Torna alla Home</a>
 
     <div class="section-card">
-        <h2>Prontuario Datasheet PDF</h2>
-        <p>Link diretti ufficiali ai componenti più distribuiti nei laboratori scolastici:</p>
-        
-        <h3>Transistor & Diodi</h3>
+        <h2>Prontuario Datasheet PDF Rapidi</h2>
+        <p>Collegamenti diretti ai componenti usati nei laboratori scolastici:</p>
         <a href="https://www.onsemi.com/pdf/datasheet/bc546-d.pdf" target="_blank" class="ds-link">📄 BC547 NPN</a>
         <a href="https://www.onsemi.com/pdf/datasheet/2n2222a-d.pdf" target="_blank" class="ds-link">📄 2N2222 NPN</a>
         <a href="https://www.vishay.com/docs/88503/1n4001.pdf" target="_blank" class="ds-link">📄 1N4007 Diodo</a>
-        
-        <h3>Circuiti Integrati</h3>
+        <br><br>
         <a href="https://www.ti.com/lit/ds/symlink/lm741.pdf" target="_blank" class="ds-link">📄 UA741 Op-Amp</a>
         <a href="https://www.ti.com/lit/ds/symlink/tl081.pdf" target="_blank" class="ds-link">📄 TL081 Op-Amp</a>
         <a href="https://www.st.com/resource/en/datasheet/l78.pdf" target="_blank" class="ds-link">📄 L7805 (Regolatore 5V)</a>
@@ -36,8 +30,8 @@
 
     <div class="section-card">
         <h2>Leggi di Kirchhoff</h2>
-        <div class="formula-box">$$\sum I_{entranti} = \sum I_{uscenti}$$</div>
-        <div class="formula-box">$$\sum V = 0$$</div>
+        <p><strong>LKC:</strong> La somma delle correnti entranti in un nodo è uguale alla somma delle uscenti.</p>
+        <p><strong>LKT:</strong> La somma algebrica delle tensioni lungo una maglia chiusa è pari a zero.</p>
     </div>
 </body>
 </html>

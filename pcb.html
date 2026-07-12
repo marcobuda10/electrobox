@@ -3,99 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hub Elettronica - Progettazione PCB</title>
+    <title>Elettronica - PCB</title>
     <style>
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background-color: #f4f7f6;
-            margin: 0;
-            padding: 20px;
-            color: #333;
-        }
-        .btn-back {
-            display: inline-block;
-            text-decoration: none;
-            background-color: #1e293b;
-            color: white;
-            padding: 10px 15px;
-            border-radius: 8px;
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-        .section-card {
-            background: white;
-            padding: 20px;
-            border-radius: 12px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            margin-bottom: 20px;
-        }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .btn-back { display: block; text-align: center; text-decoration: none; background-color: #1e293b; color: white; padding: 12px; border-radius: 8px; font-size: 15px; font-weight: bold; margin-bottom: 20px; width: 100%; box-sizing: border-box; }
+        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; box-sizing: border-box; }
         h2 { color: #8b5cf6; margin-top: 0; }
-        h3 { color: #1e293b; margin-top: 15px; margin-bottom: 5px; }
-        
-        /* Stile lista a step */
-        .step-list { list-style-type: none; padding: 0; }
-        .step-list li { margin-bottom: 12px; padding-left: 30px; position: relative; line-height: 1.4; }
-        .step-list li::before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: #8b5cf6;
-            font-weight: bold;
-            background: #f3e8ff;
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            text-align: center;
-            font-size: 12px;
-            line-height: 20px;
-        }
-        
-        .tip-box {
-            background-color: #f5f3ff;
-            border-left: 5px solid #8b5cf6;
-            padding: 15px;
-            border-radius: 4px;
-            margin-top: 15px;
-        }
+        .tip-box { background-color: #f5f3ff; border-left: 5px solid #8b5cf6; padding: 12px; border-radius: 4px; margin-top: 10px; }
     </style>
 </head>
 <body>
-
-    <a href="index.html" class="btn-back">← Torna alla Home</a>
+    <a href="index.html#elettronica" class="btn-back">← Torna alla Home</a>
 
     <div class="section-card">
         <h2>Progettazione PCB (KiCad)</h2>
-        <p><strong>KiCad</strong> è il software open-source standard per disegnare schemi elettrici e trasformarli in circuiti stampati reali (PCB) pronti da mandare in fabbrica.</p>
-        
-        <h3>Il Workflow standard in 3 passi:</h3>
-        <ul class="step-list">
-            <li><strong>Schema Elettrico (Eeschema):</strong> Disegni il circuito collegando i simboli dei componenti (resistenze, integrati, connettori).</li>
-            <li><strong>Associazione Impronte (Footprints):</strong> Associi a ogni simbolo la sua forma reale (es. quanto è grande fisicamente la resistenza da saldare).</li>
-            <li><strong>Sbroglio (PCB Editor):</strong> Posizioni i componenti sulla piastra virtuale e tracci le piste di rame che li collegano.</li>
-        </ul>
+        <p>Workflow standard: 1. Disegno dello Schema Elettrico &rarr; 2. Associazione Impronte fisiche (Footprints) &rarr; 3. Sbroglio delle piste nel PCB Editor.</p>
     </div>
 
     <div class="section-card">
         <h2>Le Regole d'Oro del Layout</h2>
-        <p>Quando passi dal disegno alle piste di rame sul PCB, tieni a mente queste regole fondamentali per evitare malfunzionamenti:</p>
-        
-        <div class="tip-box">
-            <strong>1. No agli angoli a 90°:</strong> Piega le piste sempre a 45 gradi. Gli angoli retti possono causare problemi di riflessione del segnale ad alta frequenza e accumulare acido durante l'incisione.
-        </div>
-        
-        <div class="tip-box">
-            <strong>2. Spessore delle piste:</strong> Le piste del segnale possono essere sottili (es. 0.25 mm), ma le piste di alimentazione (VCC e GND) devono essere più larghe per sopportare la corrente senza scaldarsi.
-        </div>
-
-        <div class="tip-box">
-            <strong>3. Piano di Massa (GND):</strong> Riempi le zone vuote del circuito con un "Piano di Massa". Riduce i disturbi elettromagnetici e semplifica i collegamenti al polo negativo.
-        </div>
-        
-        <div class="tip-box">
-            <strong>4. Condensatori di disaccoppiamento:</strong> Metti i condensatori da 100nF il più vicino possibile ai pin di alimentazione dei chip integrati per stabilizzare la tensione.
-        </div>
+        <div class="tip-box"><strong>Angoli a 45°:</strong> Evita curve a 90° per non creare disadattamenti di impedenza e accumuli di acido in fase di incisione.</div>
+        <div class="tip-box"><strong>Spessore Piste:</strong> Allarga adeguatamente le piste dedicate all'alimentazione (VCC, GND) rispetto a quelle dei segnali.</div>
+        <div class="tip-box"><strong>Piano di Massa:</strong> Riempi le aree vuote del circuito collegate a GND per schermare i disturbi elettromagnetici.</div>
     </div>
-
 </body>
 </html>

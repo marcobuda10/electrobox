@@ -8,7 +8,6 @@
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 0; color: #333; scroll-behavior: smooth; }
 
-        /* HEADER E MENU */
         header {
             background-color: #1e293b;
             color: white;
@@ -23,7 +22,6 @@
             justify-content: center;
         }
 
-        /* Bottone Menu Hamburger */
         .menu-icon {
             position: absolute;
             left: 20px;
@@ -34,7 +32,6 @@
 
         header h1 { margin: 0; font-size: 22px; }
 
-        /* SIDEBAR (Menu laterale) */
         .sidebar {
             height: 100%;
             width: 0;
@@ -70,7 +67,6 @@
             cursor: pointer;
         }
 
-        /* Overlay per chiudere il menu cliccando fuori */
         .overlay {
             display: none;
             position: fixed;
@@ -82,7 +78,6 @@
             z-index: 1500;
         }
 
-        /* LAYOUT CARD */
         .container { padding: 20px; max-width: 500px; margin: 0 auto; }
 
         .category-title {
@@ -109,11 +104,9 @@
         .menu-card h2 { margin: 0 0 5px 0; font-size: 16px; }
         .menu-card p { margin: 0; font-size: 13px; color: #64748b; line-height: 1.4; }
 
-        /* Colori Sezioni */
-        .card-ele { border-left-color: #10b981; } /* Elettronica Verde */
-        .card-sis { border-left-color: #06b6d4; } /* Sistemi Azzurro */
-        .card-tps { border-left-color: #db2777; } /* TPSEE Rosa/Fucsia */
-
+        .card-ele { border-left-color: #10b981; }
+        .card-sis { border-left-color: #06b6d4; }
+        .card-tps { border-left-color: #db2777; }
     </style>
 </head>
 <body>
@@ -134,21 +127,21 @@
     <div class="container">
         
         <div class="category-title" id="elettronica">Elettronica</div>
-        <a href="calcolatori.html" class="menu-card card-ele"><h2>1. Simulatori & Calcolatori</h2><p>Codice colori, Legge di Ohm e scorciatoie simulatori.</p></a>
-        <a href="programmazione.html" class="menu-card card-ele"><h2>2. Arduino & Micro</h2><p>Guide rapide e pinout Arduino Uno.</p></a>
+        <a href="calcolatori.html" class="menu-card card-ele"><h2>1. Simulatori & Calcolatori</h2><p>Codice colori, Legge di Ohm, Convertitore Basi e Calcolatore NE555.</p></a>
+        <a href="programmazione.html" class="menu-card card-ele"><h2>2. Microcontrollori & Arduino</h2><p>Guide rapide e prontuario pinout Arduino Uno.</p></a>
         <a href="pcb.html" class="menu-card card-ele"><h2>3. Progettazione PCB</h2><p>Tips per KiCad e regole di sbroglio.</p></a>
-        <a href="studio.html" class="menu-card card-ele"><h2>4. Formule & Studio</h2><p>Kirchhoff e organizzazione con Notion.</p></a>
+        <a href="studio.html" class="menu-card card-ele"><h2>4. Formule & Studio</h2><p>Kirchhoff, organizzazione Notion e link diretti ai Datasheet PDF.</p></a>
 
         <div class="category-title" id="sistemi">Sistemi e Automazione</div>
         <a href="sistemi-simulatori.html" class="menu-card card-sis"><h2>1. Piattaforme & Sim</h2><p>Packet Tracer e Node-RED.</p></a>
-        <a href="sistemi-reti.html" class="menu-card card-sis"><h2>2. Protocolli & Reti</h2><p>Modello ISO/OSI e indirizzi IP.</p></a>
-        <a href="sistemi-comandi.html" class="menu-card card-sis"><h2>3. Diagnostica</h2><p>Ping, Ipconfig e Tracert.</p></a>
+        <a href="sistemi-reti.html" class="menu-card card-sis"><h2>2. Protocolli & Reti</h2><p>Modello ISO/OSI e calcolatore Subnet Mask IPv4.</p></a>
+        <a href="sistemi-comandi.html" class="menu-card card-sis"><h2>3. Diagnostica & Porte</h2><p>Comandi di rete, porte standard e codici HTTP per l'IoT.</p></a>
         <a href="sistemi-regole.html" class="menu-card card-sis"><h2>4. Regole Automazione</h2><p>Sicurezza IoT e logiche Fail-Safe.</p></a>
 
         <div class="category-title" id="tpsee">TPSEE</div>
         <a href="tpsee-componenti.html" class="menu-card card-tps"><h2>1. Dispositivi di Potenza</h2><p>Relè, contattori e organi di manovra.</p></a>
-        <a href="tpsee-norme.html" class="menu-card card-tps"><h2>2. Normative & Sicurezza</h2><p>Norme CEI, gradi IP e protezione elettrica.</p></a>
-        <a href="tpsee-misure.html" class="menu-card card-tps"><h2>3. Misure & Strumenti</h2><p>Uso dell'oscilloscopio e del multimetro.</p></a>
+        <a href="tpsee-norme.html" class="menu-card card-tps"><h2>2. Normative & Simboli</h2><p>Norme CEI, gradi IP e prontuario simboli grafici.</p></a>
+        <a href="tpsee-misure.html" class="menu-card card-tps"><h2>3. Misure & Cavi</h2><p>Uso dell'oscilloscopio e tabella portata sezioni cavi.</p></a>
         <a href="tpsee-progetto.html" class="menu-card card-tps"><h2>4. Fasi del Progetto</h2><p>Documentazione tecnica e workflow progettuale.</p></a>
 
     </div>
@@ -158,7 +151,6 @@
             document.getElementById("mySidebar").style.width = "250px";
             document.getElementById("myOverlay").style.display = "block";
         }
-
         function closeNav() {
             document.getElementById("mySidebar").style.width = "0";
             document.getElementById("myOverlay").style.display = "none";

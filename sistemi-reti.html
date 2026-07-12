@@ -1,82 +1,69 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistemi - Protocolli e Reti</title>
+    <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistemi - Reti</title>
     <style>
         body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
-        .btn-back { display: inline-block; text-decoration: none; background-color: #1e293b; color: white; padding: 10px 15px; border-radius: 8px; font-size: 14px; margin-bottom: 20px; }
-        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .btn-back { display: block; text-align: center; text-decoration: none; background-color: #1e293b; color: white; padding: 12px; border-radius: 8px; font-size: 15px; font-weight: bold; margin-bottom: 20px; width: 100%; box-sizing: border-box; }
+        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); margin-bottom: 20px; box-sizing: border-box; }
         h2 { color: #0284c7; margin-top: 0; }
         label { display: block; margin: 10px 0 5px; font-weight: bold; }
-        select, input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; box-sizing: border-box; }
+        select, input { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; }
         button { background-color: #0284c7; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; margin-top: 15px; font-weight: bold; cursor: pointer; }
-        .result { background: #e0f2fe; padding: 15px; border-left: 5px solid #0284c7; margin-top: 15px; border-radius: 4px; font-family: monospace; font-size: 14px; white-space: pre-line; }
-        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; }
+        .result { background: #e0f2fe; padding: 15px; border-left: 5px solid #0284c7; margin-top: 15px; border-radius: 4px; font-family: monospace; white-space: pre-line; }
+        .table-container { width: 100%; overflow-x: auto; margin-top: 15px; border-radius: 6px; border: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; min-width: 400px; font-size: 14px; }
         th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         th { background-color: #0284c7; color: white; }
-        tr:nth-child(even) { background-color: #f9f9f9; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="btn-back">← Torna alla Home</a>
+    <a href="index.html#sistemi" class="btn-back">← Torna alla Home</a>
 
     <div class="section-card">
-        <h2>Calcolatore Subnet Veloce (IPv4 Class C)</h2>
-        <p>Calcola maschera, IP di Broadcast ed Host utili per reti locali standard (sotto-reti di /24).</p>
-        <label>Indirizzo IP di partenza (Rete):</label>
-        <input type="text" id="ip_base" value="192.168.1.0">
+        <h2>Calcolatore Subnet IPv4 Veloce</h2>
+        <label>Indirizzo IP di Rete:</label> <input type="text" id="ip_base" value="192.168.1.0">
         <label>Notazione CIDR:</label>
         <select id="cidr">
-            <option value="24">/24 (Maschera: 255.255.255.0)</option>
-            <option value="25">/25 (Maschera: 255.255.255.128)</option>
-            <option value="26">/26 (Maschera: 255.255.255.192)</option>
-            <option value="27">/27 (Maschera: 255.255.255.224)</option>
-            <option value="28">/28 (Maschera: 255.255.255.240)</option>
-            <option value="30">/30 (Maschera: 255.255.255.252)</option>
+            <option value="24">/24 (Subnet: 255.255.255.0)</option>
+            <option value="25">/25 (Subnet: 255.255.255.128)</option>
+            <option value="26">/26 (Subnet: 255.255.255.192)</option>
+            <option value="27">/27 (Subnet: 255.255.255.224)</option>
         </select>
-        <button onclick="calcolaSubnet()">Calcola Subnet</button>
-        <div id="risultato_subnet" class="result">Dati Subnet: Clicca su Calcola</div>
+        <button onclick="calcolaSubnet()">Calcola</button>
+        <div id="risultato_subnet" class="result">Risultati: Premere Calcola</div>
     </div>
 
     <div class="section-card">
-        <h2>Prontuario Reti & Modello ISO/OSI</h2>
-        <table>
-            <thead>
-                <tr><th>Livello</th><th>Nome</th><th>Protocolli Comuni</th></tr>
-            </thead>
-            <tbody>
-                <tr><td><strong>7</strong></td><td>Applicazione</td><td>HTTP, HTTPS, FTP, DNS, SMTP</td></tr>
-                <tr><td><strong>4</strong></td><td>Trasporto</td><td>TCP, UDP</td></tr>
-                <tr><td><strong>3</strong></td><td>Rete</td><td>IP, ICMP / <strong>Router</strong></td></tr>
-                <tr><td><strong>2</strong></td><td>Collegamento</td><td>Ethernet, Wi-Fi / <strong>Switch</strong></td></tr>
-                <tr><td><strong>1</strong></td><td>Fisico</td><td>Cavi, Segnali Radio</td></tr>
-            </tbody>
-        </table>
+        <h2>Modello di Rete ISO/OSI</h2>
+        <div class="table-container">
+            <table>
+                <thead><tr><th>Livello</th><th>Nome</th><th>Esempi</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>7</strong></td><td>Applicazione</td><td>HTTP, HTTPS, DNS, MQTT</td></tr>
+                    <tr><td><strong>4</strong></td><td>Trasporto</td><td>TCP, UDP</td></tr>
+                    <tr><td><strong>3</strong></td><td>Rete</td><td>IP / <strong>Router</strong></td></tr>
+                    <tr><td><strong>2</strong></td><td>Collegamento</td><td>Ethernet, MAC / <strong>Switch</strong></td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script>
         function calcolaSubnet() {
             let ip = document.getElementById('ip_base').value;
             let cidr = parseInt(document.getElementById('cidr').value);
-            let parts = ip.split('.');
-            if(parts.length !== 4) { alert("Inserisci un IP valido nel formato x.x.x.x"); return; }
-            
-            let baseSub = parseInt(parts[3]);
-            let hostTotali = Math.pow(2, 32 - cidr);
-            let hostUtili = hostTotali - 2;
-            let maskLastOctet = 256 - hostTotali;
-            let broadcast = baseSub + hostTotali - 1;
-            
-            let output = "Subnet Mask: 255.255.255." + maskLastOctet + "\n" +
-                         "Host Totali: " + hostTotali + " | Host Utili: " + hostUtili + "\n" +
-                         "IP di Rete: " + parts[0]+"."+parts[1]+"."+parts[2]+"."+baseSub + "\n" +
-                         "Primo IP Utile: " + parts[0]+"."+parts[1]+"."+parts[2]+"."+(baseSub+1) + "\n" +
-                         "Ultimo IP Utile: " + parts[0]+"."+parts[1]+"."+parts[2]+"."+(broadcast-1) + "\n" +
-                         "IP di Broadcast: " + parts[0]+"."+parts[1]+"."+parts[2]+"."+broadcast;
-            
-            document.getElementById('risultato_subnet').innerText = output;
+            let p = ip.split('.'); if(p.length !== 4) return;
+            let baseSub = parseInt(p[3]);
+            let hostTot = Math.pow(2, 32 - cidr);
+            let mask = 256 - hostTot;
+            let broad = baseSub + hostTot - 1;
+            document.getElementById('risultato_subnet').innerText = 
+                "Maschera: 255.255.255." + mask + "\n" +
+                "Host Utili: " + (hostTot - 2) + "\n" +
+                "IP Rete: " + p[0]+"."+p[1]+"."+p[2]+"."+baseSub + "\n" +
+                "IP Broadcast: " + p[0]+"."+p[1]+"."+p[2]+"."+broad;
         }
     </script>
 </body>

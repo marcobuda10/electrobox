@@ -4,35 +4,32 @@
     <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TPSEE - Simboli & Norme</title>
     <style>
-        body{font-family:'Segoe UI',sans-serif;background:#f4f7f6;padding:20px;}
-        .btn{display:inline-block;text-decoration:none;background:#1e293b;color:white;padding:10px 15px;border-radius:8px;margin-bottom:20px;}
-        .card{background:white;padding:20px;border-radius:12px;box-shadow:0 2px 4px rgba(0,0,0,0.1);margin-bottom:20px;}
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 14px; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #f4f7f6; margin: 0; padding: 20px; color: #333; }
+        .btn-back { display: block; text-align: center; text-decoration: none; background-color: #1e293b; color: white; padding: 12px; border-radius: 8px; font-size: 15px; font-weight: bold; margin-bottom: 20px; width: 100%; box-sizing: border-box; }
+        .section-card { background: white; padding: 20px; border-radius: 12px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-bottom: 20px; box-sizing: border-box; }
+        .table-container { width: 100%; overflow-x: auto; margin-top: 10px; border-radius: 6px; border: 1px solid #ddd; }
+        table { width: 100%; border-collapse: collapse; font-size: 14px; min-width: 450px; }
         th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
         th { background-color: #db2777; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
     </style>
 </head>
 <body>
-    <a href="index.html" class="btn">← Home</a>
+    <a href="index.html#tpsee" class="btn-back">← Torna alla Home</a>
     
-    <div class="card">
-        <h2 style="color:#db2777">Prontuario Simboli Grafici CEI/IEC</h2>
-        <p>Riferimento veloce per non sbagliare le icone nei compiti di disegno tecnico:</p>
-        <table>
-            <thead><tr><th>Componente</th><th>Lettera Identificativa</th><th>Descrizione Grafica Schema</th></tr></thead>
-            <tbody>
-                <tr><td><strong>Contattore (Bobina)</strong></td><td>KM</td><td>Rettangolo semplice con linee ai capi A1-A2</td></tr>
-                <tr><td><strong>Contatti Potenza</strong></td><td>KM (1-2, 3-4, 5-6)</td><td>Linee interrotte da semicerchi aperti (normalmente aperti)</td></tr>
-                <tr><td><strong>Relè Termico</strong></td><td>FR</td><td>Simbolo a "quadrato aperto" con linea spezzata termica</td></tr>
-                <tr><td><strong>Trasformatore</strong></td><td>TM</td><td>Due cerchi intersecati o due bobine affiancate</td></tr>
-                <tr><td><strong>Motore Asincrono 3~</strong></td><td>M</td><td>Cerchio con all'interno la scritta M e 3~</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-    <div class="card">
-        <h2 style="color:#db2777">Gradi di Protezione IP</h2>
-        <p>Esempio: <strong>IP65</strong> $\rightarrow$ 6: Protezione totale dalle polveri | 5: Protezione dai getti d'acqua d'ugello.</p>
+    <div class="section-card">
+        <h2>Prontuario Simboli Grafici CEI/IEC</h2>
+        <div class="table-container">
+            <table>
+                <thead><tr><th>Componente</th><th>Lettera</th><th>Descrizione Grafica Schema</th></tr></thead>
+                <tbody>
+                    <tr><td><strong>Contattore (Bobina)</strong></td><td>KM</td><td>Rettangolo semplice con capi A1-A2.</td></tr>
+                    <tr><td><strong>Contatti Potenza</strong></td><td>KM</td><td>Linee con semicerchi aperti di interruzione.</td></tr>
+                    <tr><td><strong>Relè Termico</strong></td><td>FR</td><td>Simbolo a quadrato aperto accoppiato alla linea.</td></tr>
+                    <tr><td><strong>Trasformatore</strong></td><td>TM</td><td>Due induttanze affiancate o cerchi intrecciati.</td></tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
