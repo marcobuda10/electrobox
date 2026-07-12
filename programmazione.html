@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Elettronica - Programmazione</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .btn-back {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #1e293b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .section-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        h2 { color: #f59e0b; margin-top: 0; }
+        h3 { color: #1e293b; margin-bottom: 5px; }
+        
+        /* Stile tabelle pinout */
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; font-size: 14px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; }
+        th { background-color: #f59e0b; color: white; }
+        tr:nth-child(even) { background-color: #f9f9f9; }
+        
+        /* Stile codice */
+        pre { background-color: #1e293b; color: #f8fafc; padding: 15px; border-radius: 6px; overflow-x: auto; font-family: 'Courier New', Courier, monospace; font-size: 14px; }
+        .tag-pwm { background-color: #3b82f6; color: white; padding: 2px 6px; border-radius: 4px; font-size: 11px; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-back">← Torna alla Home</a>
+
+    <div class="section-card">
+        <h2>Piattaforme di Sviluppo</h2>
+        <h3>Arduino IDE</h3>
+        <p>L'ambiente ufficiale per scrivere codice in C++ e caricarlo sulle schede (Arduino Uno, Nano, ESP32).</p>
+        
+        <h3>Tinkercad Circuits</h3>
+        <p>Se non hai i componenti fisici, usa Tinkercad per trascinare un Arduino virtuale sulla breadboard, collegare LED e resistenze e testare il codice in totale sicurezza senza bruciare nulla.</p>
+    </div>
+
+    <div class="section-card">
+        <h2>Guida Rapida Pinout Arduino Uno</h2>
+        <p>Ecco a cosa servono i pin principali della scheda che usi in laboratorio:</p>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Pin</th>
+                    <th>Tipo</th>
+                    <th>Funzione / Note</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td><strong>5V / 3.3V</strong></td><td>Alimentazione</td><td>Fornisce tensione ai componenti esterni.</td></tr>
+                <tr><td><strong>GND</strong></td><td>Massa</td><td>Il polo negativo del circuito (Ground).</td></tr>
+                <tr><td><strong>A0 - A5</strong></td><td>Ingressi Analogici</td><td>Leggono valori variabili (es. potenziometri o sensori di luce).</td></tr>
+                <tr><td><strong>D0 - D13</strong></td><td>Digitali I/O</td><td>Accendono/spengono componenti o leggono pulsanti (Stato ON/OFF).</td></tr>
+                <tr><td><strong>3, 5, 6, 9, 10, 11</strong></td><td>Digitali <span class="tag-pwm">PWM</span></td><td>Pin digitali speciali che possono simulare un'uscita analogica (es. per regolare la luminosità di un LED). Spesso contrassegnati dal simbolo (~).</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="section-card">
+        <h2>Codice Base: Far lampeggiare un LED (Blink)</h2>
+        <p>Il codice di partenza per verificare che tutto funzioni. Copialo nel tuo IDE:</p>
+        <pre>
+void setup() {
+  // Imposta il pin 13 come uscita digitale
+  pinMode(13, OUTPUT);
+}
+
+void loop() {
+  digitalWrite(13, HIGH); // Accende il LED (Invia 5V)
+  delay(1000);           // Aspetta 1 secondo (1000 millisecondi)
+  digitalWrite(13, LOW);  // Spegne il LED (Invia 0V)
+  delay(1000);           // Aspetta un altro secondo
+}</pre>
+    </div>
+
+</body>
+</html>

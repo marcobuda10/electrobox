@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Elettronica - Calcolatori</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .btn-back {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #1e293b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .section-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        h2 { color: #10b981; margin-top: 0; }
+        h3 { color: #1e293b; margin-bottom: 10px; }
+        
+        /* Stili per i moduli di calcolo */
+        label { display: block; margin: 10px 0 5px; font-weight: bold; font-size: 14px; }
+        input, select { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; box-sizing: border-box; font-size: 16px; }
+        button { background-color: #10b981; color: white; border: none; padding: 12px; width: 100%; border-radius: 6px; margin-top: 15px; font-size: 16px; cursor: pointer; font-weight: bold; }
+        button:active { background-color: #059669; }
+        .result { background: #ecfdf5; padding: 15px; border-left: 5px solid #10b981; margin-top: 15px; border-radius: 4px; font-weight: bold; }
+        
+        /* Colori per le opzioni delle resistenze */
+        .col-0 { background: #000; color: #fff; } .col-1 { background: #8B4513; color: #fff; }
+        .col-2 { background: #f00; color: #fff; } .col-3 { background: #ffa500; }
+        .col-4 { background: #ff0; } .col-5 { background: #008000; color: #fff; }
+        .col-6 { background: #00f; color: #fff; } .col-7 { background: #ee82ee; }
+        .col-8 { background: #808080; color: #fff; } .col-9 { background: #fff; }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-back">← Torna alla Home</a>
+
+    <div class="section-card">
+        <h2>Simulatori Consigliati</h2>
+        <h3>Circuit JS / EveryCircuit</h3>
+        <p>Usa questi simulatori per vedere l'animazione visiva del flusso di elettroni. Ottimi per capire i transistor e i diodi senza rischiare di bruciarli sul banco.</p>
+        <h3>LTspice (PC/Mac)</h3>
+        <p>Il software standard per l'università e la scuola. Usalo per simulazioni analogiche professionali prima di creare il circuito reale.</p>
+    </div>
+
+    <div class="section-card">
+        <h2>Calcolatore Legge di Ohm</h2>
+        <p>Inserisci due valori qualsiasi per calcolare il terzo ($V = I \times R$). Lascia vuoto il campo che vuoi scoprire.</p>
+        
+        <label>Tensione (V in Volt):</label>
+        <input type="number" id="v_ohm" step="any" placeholder="Es. 12">
+        
+        <label>Corrente (I in Ampere):</label>
+        <input type="number" id="i_ohm" step="any" placeholder="Es. 0.02">
+        
+        <label>Resistenza (R in Ohm):</label>
+        <input type="number" id="r_ohm" step="any" placeholder="Es. 220">
+        
+        <button onclick="calcolaOhm()">Calcola</button>
+        <div id="risultato_ohm" class="result">Risultato: Inserisci i dati e premi Calcola</div>
+    </div>
+
+    <div class="section-card">
+        <h2>Codice Colori Resistenze (4 Bande)</h2>
+        
+        <label>Banda 1 (Prima cifra):</label>
+        <select id="b1">
+            <option value="0" class="col-0">Nero (0)</option>
+            <option value="1" class="col-1" selected>Marrone (1)</option>
+            <option value="2" class="col-2">Rosso (2)</option>
+            <option value="3" class="col-3">Arancione (3)</option>
+            <option value="4" class="col-4">Giallo (4)</option>
+            <option value="5" class="col-5">Verde (5)</option>
+            <option value="6" class="col-6">Blu (6)</option>
+            <option value="7" class="col-7">Viola (7)</option>
+            <option value="8" class="col-8">Grigio (8)</option>
+            <option value="9" class="col-9">Bianco (9)</option>
+        </select>
+
+        <label>Banda 2 (Seconda cifra):</label>
+        <select id="b2">
+            <option value="0" class="col-0" selected>Nero (0)</option>
+            <option value="1" class="col-1">Marrone (1)</option>
+            <option value="2" class="col-2">Rosso (2)</option>
+            <option value="3" class="col-3">Arancione (3)</option>
+            <option value="4" class="col-4">Giallo (4)</option>
+            <option value="5" class="col-5">Verde (5)</option>
+            <option value="6" class="col-6">Blu (6)</option>
+            <option value="7" class="col-7">Viola (7)</option>
+            <option value="8" class="col-8">Grigio (8)</option>
+            <option value="9" class="col-9">Bianco (9)</option>
+        </select>
+
+		<label>Banda 3 (Terza cifra):</label>
+        <select id="b3">
+            <option value="0" class="col-0" selected>Nero (0)</option>
+            <option value="1" class="col-1">Marrone (1)</option>
+            <option value="2" class="col-2">Rosso (2)</option>
+            <option value="3" class="col-3">Arancione (3)</option>
+            <option value="4" class="col-4">Giallo (4)</option>
+            <option value="5" class="col-5">Verde (5)</option>
+            <option value="6" class="col-6">Blu (6)</option>
+            <option value="7" class="col-7">Viola (7)</option>
+            <option value="8" class="col-8">Grigio (8)</option>
+            <option value="9" class="col-9">Bianco (9)</option>
+        </select>
+		
+        <label>Banda 4 (Moltiplicatore):</label>
+        <select id="b4">
+            <option value="1" class="col-0">Nero (x1)</option>
+            <option value="10" class="col-1">Marrone (x10)</option>
+            <option value="100" class="col-2" selected>Rosso (x100)</option>
+            <option value="1000" class="col-3">Arancione (x1k)</option>
+            <option value="10000" class="col-4">Giallo (x10k)</option>
+            <option value="100000" class="col-5">Verde (x100k)</option>
+            <option value="1000000" class="col-6">Blu (x1M)</option>
+        </select>
+
+        <button onclick="calcolaResistenza()">Calcola Valore</button>
+        <div id="risultato_res" class="result">Valore: 1000 Ω (1 kΩ)</div>
+    </div>
+
+    <script>
+        function calcolaOhm() {
+            let v = parseFloat(document.getElementById('v_ohm').value);
+            let i = parseFloat(document.getElementById('i_ohm').value);
+            let r = parseFloat(document.getElementById('r_ohm').value);
+            let resBox = document.getElementById('risultato_ohm');
+
+            if (!isNaN(v) && !isNaN(i) && isNaN(r)) {
+                resBox.innerText = "Resistenza (R) = " + (v / i).toFixed(2) + " Ω";
+            } else if (!isNaN(v) && !isNaN(r) && isNaN(i)) {
+                resBox.innerText = "Corrente (I) = " + (v / r).toFixed(4) + " A (" + ((v/r)*1000).toFixed(2) + " mA)";
+            } else if (!isNaN(i) && !isNaN(r) && isNaN(v)) {
+                resBox.innerText = "Tensione (V) = " + (i * r).toFixed(2) + " V";
+            } else {
+                resBox.innerText = "Errore: Inserisci esattamente DUE valori.";
+            }
+        }
+
+        function calcolaResistenza() {
+            let b1 = document.getElementById('b1').value;
+            let b2 = document.getElementById('b2').value;
+			let b3 = document.getElementById('b3').value;
+            let m = parseFloat(document.getElementById('b4').value);
+            
+            let valore = parseInt(b1 + b2 + b3) * m;
+            let testo = valore + " Ω";
+            
+            if(valore >= 1000 && valore < 1000000) {
+                testo += " (" + (valore/1000).toFixed(1) + " kΩ)";
+            } else if(valore >= 1000000) {
+                testo += " (" + (valore/1000000).toFixed(1) + " MΩ)";
+            }
+            
+            document.getElementById('risultato_res').innerText = "Valore: " + testo;
+        }
+    </script>
+</body>
+</html>

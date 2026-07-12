@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Elettronica - Formule & Studio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+        .btn-back {
+            display: inline-block;
+            text-decoration: none;
+            background-color: #1e293b;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+        .section-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        h2 { color: #ef4444; margin-top: 0; }
+        h3 { color: #1e293b; margin-top: 15px; margin-bottom: 5px; }
+        
+        .formula-box {
+            background-color: #fef2f2;
+            border-left: 5px solid #ef4444;
+            padding: 15px;
+            border-radius: 4px;
+            margin-top: 10px;
+            font-family: 'Cambria', Georgia, serif;
+            font-size: 16px;
+        }
+        
+        .app-link {
+            background-color: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 12px;
+            border-radius: 6px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <a href="index.html" class="btn-back">← Torna alla Home</a>
+
+    <div class="section-card">
+        <h2>Leggi di Kirchhoff</h2>
+        <p>Le basi per l'analisi di qualsiasi circuito elettrico complesso:</p>
+        
+        <h3>1. Legge di Kirchhoff delle Correnti (LKC)</h3>
+        <p>La somma delle correnti entranti in un nodo è uguale alla somma delle correnti uscenti.</p>
+        <div class="formula-box">
+            sum I_{entranti} = sum I_{uscenti}
+        </div>
+
+        <h3>2. Legge di Kirchhoff delle Tensioni (LKT)</h3>
+        <p>La somma algebrica delle tensioni lungo una maglia chiusa è pari a zero.</p>
+        <div class="formula-box">
+            sum V = 0
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>Risoluzione Esercizi & Matematica</h2>
+        <p>L'elettronica (soprattutto in corrente alternata con i numeri complessi) richiede molti calcoli. Ecco come velocizzare lo studio:</p>
+        
+        <div class="app-link">
+            <strong>Photomath / Microsoft Math Solver:</strong> Se un sistema di equazioni per Kirchhoff non torna, usa la fotocamera del telefono con queste app. Non farlo per copiare, ma per controllare i singoli passaggi matematici e trovare l'errore.
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>Organizzazione con Notion</h2>
+        <p>Ideale per creare un vero e proprio "quaderno digitale" tecnico. Consigli su cosa inserire:</p>
+        <ul>
+            <li><strong>Database componenti:</strong> Salva i link o i PDF dei <em>datasheet</em> dei componenti che usi più spesso (es. transistor BC547, integrato NE555).</li>
+            <li><strong>Archivio Code Snippet:</strong> Tieni traccia dei pezzi di codice C++ per Arduino che funzionano, pronti per essere riutilizzati in altri progetti.</li>
+            <li><strong>Relazioni di laboratorio:</strong> Struttura uno schema fisso per scrivere i report scolastici in modo rapido e ordinato.</li>
+        </ul>
+    </div>
+
+</body>
+</html>

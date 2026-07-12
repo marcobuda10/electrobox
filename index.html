@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hub Elettronica - Home</title>
+    <style>
+        /* Stili di base per la pagina */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f7f6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+
+        /* Intestazione dell'applicazione */
+        header {
+            background-color: #1e293b;
+            color: white;
+            text-align: center;
+            padding: 20px 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        header p {
+            margin: 5px 0 0 0;
+            font-size: 14px;
+            color: #94a3b8;
+        }
+
+        /* Contenitore principale dei bottoni */
+        .container {
+            padding: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        /* Stile dei pulsanti del menu (Card) */
+        .menu-card {
+            background-color: white;
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            border-left: 6px solid #3b82f6; /* Barra colorata laterale */
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        /* Effetto quando si clicca (o si passa sopra con il mouse su PC) */
+        .menu-card:active {
+            transform: scale(0.98);
+            background-color: #f8fafc;
+        }
+
+        .menu-card h2 {
+            margin: 0 0 8px 0;
+            font-size: 18px;
+            color: #1e293b;
+        }
+
+        .menu-card p {
+            margin: 0;
+            font-size: 14px;
+            color: #64748b;
+            line-height: 1.4;
+        }
+
+        /* Coloriamo i bordi in modo diverso per ogni sezione */
+        .card-calc { border-left-color: #10b981; } /* Verde */
+        .card-prog { border-left-color: #f59e0b; } /* Arancione */
+        .card-pcb  { border-left-color: #8b5cf6; } /* Viola */
+        .card-info { border-left-color: #ef4444; } /* Rosso */
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>ElectroBox</h1>
+        <p>La tua cassetta degli attrezzi per l'elettronica</p>
+    </header>
+
+    <div class="container">
+        
+        <a href="calcolatori.html" class="menu-card card-calc">
+            <h2>1. Simulatori & Calcolatori</h2>
+            <p>Codice colori resistenze, Legge di Ohm e scorciatoie per i simulatori (CircuitJS, LTspice).</p>
+        </a>
+
+        <a href="programmazione.html" class="menu-card card-prog">
+            <h2>2. Microcontrollori & Arduino</h2>
+            <p>Guide rapide per Arduino IDE, ESP32 e link utili per Tinkercad.</p>
+        </a>
+
+        <a href="pcb.html" class="menu-card card-pcb">
+            <h2>3. Progettazione PCB (KiCad)</h2>
+            <p>Prontuario per lo sbroglio dei circuiti stampati e tips per l'uso di KiCad.</p>
+        </a>
+
+        <a href="studio.html" class="menu-card card-info">
+            <h2>4. Formule & Organizzazione</h2>
+            <p>Formulario di matematica ed elettronica (Kirchhoff, alternata) e integrazione Notion.</p>
+        </a>
+
+    </div>
+
+</body>
+</html>
